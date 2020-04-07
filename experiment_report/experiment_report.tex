@@ -1,0 +1,134 @@
+\documentclass[UTF8,12pt,a4paper]{article}
+\usepackage{ctex}
+\usepackage[top=2.54cm,bottom=2.54cm,left=2.8cm,right=2.8cm]{geometry}
+
+\input{./template/settings.tex}
+\input{./template/titleset.tex}%标题页式长标题
+\graphicspath{{figs/}}
+
+\renewcommand{\baselinestretch}{1.1}
+
+
+
+\title{动物细胞传代培养与观察}
+\author{高旭帆}
+\stuId{2186113574}%学号
+\class{化生81}%班级
+\school{生命学院}%学院
+\course{分子细胞生物学实验}%课程名
+%\partner{}%同组同学
+\date{\today}
+\exdate{2020年4月7日}%实验日期
+
+\begin{document}
+\maketitle\xiaosi\songti
+
+\section{实验目的}
+\begin{enumerate}
+	\setlength{\itemsep}{-5pt} 
+	\item 掌握SDS-聚丙烯酰胺凝胶电泳的基本原理与实验操作技术；
+	\item 学会使用SDS-聚丙烯酰胺凝胶电泳的方法测定蛋白质的相对分子量。
+\end{enumerate}
+
+\section{实验原理}
+\subsection{SDS-PAGE}
+十二烷基硫酸钠（Sodium dodecyl sulfate SDS）是一种阴离子表面活性剂在一定的条件下，它能打开蛋白质氢键和疏水键，并按比例地结合到这些蛋白质分子上形成带负电荷的蛋白质 -SDS复合物，每克蛋白质一般结合1.4克 SDS。SDS与蛋白质的定比结合使蛋白质-SDS复合物均带上相同的负电荷，其量远远超过蛋白质原有的电荷量，因而掩盖了蛋白质间原有的电荷差异。在水溶液中，蛋白质-SDS复合物具有相同的构象，近似雪茄烟形的长椭圆棒（短轴均为 1.8nm长轴则随蛋白质的分子量成正比变化），克服了蛋白质间原有的形状差异。这样蛋白质-SDS复合物在凝胶中的迁移率不再受原有 电荷和形状的影响，而只是蛋白质分子量的函数。蛋白质分子量与电泳迁移率间的关系可用下式表示：
+$$\lg Mr = K – bm$$
+式中$Mr$为分子量；$K$为常数；$b$为斜率；$m$为迁移率。
+因此，用SDS-PAGE方法 可以对蛋白质的分子量进行测定，只需根据待测蛋白质在已知分子量的标准蛋白质的$\lg Mr$-迁移率的图中的位置，就能得知分子量。
+\subsection{principle2}
+
+\section{实验仪器与试剂}
+\subsection{样品}
+\subsection{仪器}
+\subsection{试剂}
+
+\section{实验步骤}
+\begin{enumerate}
+	\item 找到激光器电源模块，打开开关，出现激光。
+	\item 调节激光，保证功率在200mW以上，波长在532.8nm左右。
+	\item 第一个空间光调制器选择HG模式，输入合适的参数，观察光栅的样式，打开接收高阶高斯光的CCD相机，观察高阶高斯光。
+	\item 调节第一个空间光调制器的位置，进行微调，使得在CCD上观察到的高阶高斯光能够完全显示。
+	\item 转化成LG高斯模式，观察CCD上的图案。
+	\item 调节双柱透镜，保证其焦距是两个透镜间距的一半，高斯光通过之后转换高斯模式，通过CCD观察。
+	\item 调节第二个空间光调制器，选择分束模式。
+	\item 打开显微镜控制模块，产生显微镜照明灯光。
+	\item 打开最后一个CCD，调出微粒自旋的效果。
+	\item 让最后一个CCD上出现拉盖尔高阶高斯光，观察微粒自旋和公转的效果。
+\end{enumerate}
+
+
+\section{数据记录与处理}
+
+\subsection{图片}
+\begin{figure}[!h]
+	\centering
+	\begin{minipage}[c]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{gao1}
+	\end{minipage}
+	\quad
+	\begin{minipage}[c]{0.45\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{gao2}
+	\end{minipage}
+\end{figure}
+
+
+\section{结果讨论}
+\subsection{误差分析}
+
+\subsection{现象观察与思考}
+\begin{enumerate}
+	\item 空间光调制器的位置决定了反射光的位置，所以当它的位置不当，CCD相机上的画面就会不清晰或者不全，需要仔细调节。
+	\item 笔者不明白旋转波片的作用，但观察到在某些角度下，微粒并不会自转，而旋转波片后又可以。
+	\item 本实验要观察的最重要现象是，微粒进行自转和公转。粒子越接近光场的中心，公转的半径越小；当粒子离开光场，就停止自转和公转。由此可以实现将微粒任意移动和进行旋转操作。
+\end{enumerate}
+
+\subsection{建议}
+本实验提供了良好的体验，在最后提出几点建议：
+\begin{enumerate}
+	\item 对实验报告的要求不明确。本实验原理较长，并且需要叙述使用方法。这占了很大的篇幅，没有体现学生的体会，没有促进进一步的思考。可以出一些思考题。
+	\item 实验界面不能通过按Esc键退出；CCD相机的画面比较大，不能调节；按住仪器底座，再按方向键微调仪器有时会失效。这些有点影响体验。
+	\item 实验文档有些部分的格式不美观；而且没有介绍实验仪器、实验步骤的原理介绍不全面，学生并不能看着原理和装置就上手做，而是要根据在线演示照着做。
+\end{enumerate}
+
+
+\section{思考题}
+\begin{enumerate}
+	\item 
+	\item 
+	\item 
+	\item 
+\end{enumerate}
+
+\section{实验总结与体会}
+通过对回归分析及MATLAB软件在概率统计中的应用两章的自学，在查找资料和咨询老师同学的过程中，使我对MATLAB软件在概率论这门课程中的应用有了更加深入的了解，掌握了一定的技能，并且更直观的看到了概率统计的意义，在此过程中也对许多概念有了更加深入的了解和感悟，十分有益于概率论课程的学习。
+
+%参考文献
+\begin{thebibliography}{2}
+%\bibitem{1} 
+%\bibitem{2} 
+\end{thebibliography}
+
+
+
+\section*{附录}
+
+\subsection{程序}
+\begin{lstlisting}[language={Matlab},morekeywords={regress}]
+clear;
+x=[2,4,6,8,10];
+y=[64,138,205,285,360];
+n=length(x);
+X=[ones(length(y),1),x&apos;];
+Y=y&apos;
+[b,bint,r,rint,stats]=regress(Y,X);
+%b为回归系数，bint为回归系数的区间估计
+%r为残差，rint为残差置信区间
+%states对应相关系数R²，F值，与F对应的概率p，误差方差
+\end{lstlisting}
+
+
+
+\end{document}

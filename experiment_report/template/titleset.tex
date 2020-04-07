@@ -1,0 +1,31 @@
+%标题页格式
+\makeatletter
+\renewcommand*\maketitle{%
+	\begin{center}
+		\heiti\yihao  西安交通大学实验报告\hspace{1em}
+		\songti\xiaoyi\fbox{成绩：\hspace{1.5em}}
+	\end{center}%
+	
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
+		\sanhao
+		课程：\the\course 
+		\xiaosi
+		&实验日期：\the\exdate\\
+		专业班号：\the\class 
+		&提交日期：\@date\\
+		姓名：\@author\hspace{1.5em}
+		学号：\the\stuId &同组成员：\the\partner\\
+		%{\global\let\author\@empty}
+		%{\global\let\date\@empty}
+	\end{tabular}%
+	\renewcommand{\arraystretch}{1}
+
+	\noindent\rule{\linewidth}{1.5pt}
+	\vspace{0.5em}
+	
+	\heiti\erhao 实验名称：\@title
+
+	\setcounter{footnote}{0}%
+}
+\makeatother
