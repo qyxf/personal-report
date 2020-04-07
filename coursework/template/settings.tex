@@ -1,0 +1,175 @@
+\usepackage{ctex}  
+\usepackage{amsmath, amsfonts, amssymb} % 数学公式相关宏包
+\usepackage{color}      % color content
+\usepackage{graphicx}   % 导入图片
+\usepackage{subfigure}  % 并排子图
+\usepackage{hyperref}
+\usepackage{url}
+%\usepackage{breakurl}	%网址换行
+\usepackage{bm}         % 加粗部分公式，比如\bm{aaa}aaa
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{longtable}  %长表格
+\usepackage{supertabular}%跨页表格
+\usepackage{changepage}
+\usepackage{siunitx}%输入角度
+\usepackage{appendix}
+
+%修改字体，不会就去看刘海洋的书，不要自己瞎鼓捣
+%ctex有的就直接用命令字体，可以不用这样调用\setCJKfamilyfont。当然renew后方便些
+\usepackage{fontspec, xunicode, xltxtra}
+\usepackage{xeCJK}		%中文字体
+%\setCJKfamilyfont{song}{SimSun}         %宋体 song,\songti
+\newcommand{\song}{\CJKfamily{song}}                        
+%\setCJKfamilyfont{fs}{FangSong_GB2312} %仿宋2312 fs,\fangsong
+\newcommand{\fs}{\CJKfamily{fs}}                            
+%\setCJKfamilyfont{yh}{Microsoft YaHei}  %微软雅黑 yh,\yahei 
+\newcommand{\yh}{\CJKfamily{yh}}  
+%\setCJKfamilyfont{hei}{SimHei}          %黑体  hei,\heiti 
+\newcommand{\hei}{\CJKfamily{hei}}    
+%\setCJKfamilyfont{hwxh}{STXihei}        %华文细黑  hwxh  
+\newcommand{\hwxh}{\CJKfamily{hwxh}}
+%\setCJKfamilyfont{asong}{Adobe Song Std}%Adobe 宋体  asong  
+\newcommand{\asong}{\CJKfamily{asong}}
+%\setCJKfamilyfont{ahei}{Adobe Heiti Std}%Adobe 黑体  ahei  
+\newcommand{\ahei}{\CJKfamily{ahei}}  
+%\setCJKfamilyfont{akai}{Adobe Kaiti Std}%Adobe 楷体  akai,\kaishu  
+\newcommand{\akai}{\CJKfamily{akai}}
+
+\setCJKsansfont{\hei}%serif是有衬线字体sans serif无衬线字体。
+%\setCJKmonofont{\fs}%mono字体
+%\setCJKmainfont{Microsoft YaHei}  % 微软雅黑
+%\setCJKmainfont{YouYuan}  % 幼圆
+%\setCJKmainfont{NSimSun}  % 新宋体
+%\setCJKmainfont{KaiTi}    % 楷体
+\setCJKmainfont{SimSun}   % 宋体
+%\setCJKmainfont{\hei}   % 黑体
+
+% -- 英文字体 --
+\setmainfont{Times New Roman}
+%\setmainfont{Consolas}
+\setsansfont{Verdana}
+%\setsansfont{DejaVu Sans}
+%\setmonofont{Latin Modern Mono}
+
+% 其他
+%\usepackage{ccfonts} %公式使用concrete系列
+
+% -- 字号设置 --
+% ctex有设置好的中文字号，不过这是自定义的方法
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}     
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+
+%修改摘要
+\usepackage{abstract}
+\newcommand{\heiabstract}{\noindent{\xiaosi\selectfont\hei 摘\hspace{0.5em}要：}}
+\newcommand{\heikeyword}{\noindent{\xiaosi\selectfont\hei 关\hspace{0.5em}键\hspace{0.5em}词：}}
+\newcommand{\heitypeofthesis}{\noindent{\xiaosi\selectfont\hei 论文类型：}}
+\newtoks\myabstract%摘要
+\newtoks\mykeywords%关键词
+
+%修改章节标题的字体，ctexart才能用
+%用了ctexart，还使章节标题居中
+%\CTEXsetup[format={\hei}]{section}
+%\CTEXsetup[format={\hei}]{subsection}
+%\CTEXsetup[format={\hei}]{subsubsection}
+
+%参考文献
+\usepackage{natbib}
+\usepackage[super]{gbt7714}%authoryear
+%用选项代替\bibliographystyle{gbt7714-plain}unsrt
+%\newcommand{\heirefname}{\hei 参考文献：\song}
+\renewcommand{\abstractname}{}%改摘要的格式
+\newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}%参考文献的上标引用
+
+%一些信息
+\newtoks\stuId%学号
+\newtoks\class%班级
+\newtoks\school%学院
+\newtoks\course%课程名
+\newtoks\partner%同组成员
+
+% 定义页眉和页脚
+\usepackage{fancyhdr}
+\newcommand{\makeheadrule}{
+	\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
+	\rule{\textwidth}{0.5pt}}
+\renewcommand{\headrule}{
+	{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+		\makeheadrule}}
+\pagestyle{fancyplain}
+%有时文章较短，不需要显示章节标题
+
+%tikz
+\usepackage{tikz}
+\usetikzlibrary{calc,backgrounds}
+\tikzset{
+	arrow1/.style = {
+		draw = black, thick, -{Latex[length = 4mm, width = 1.5mm]},
+	}
+}
+
+% 汉风图纹	
+\RequirePackage{pgfornament-han}
+\RequirePackage{pgfornament}
+
+
+%修改列表环境
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt,leftmargin=2em}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+%彩色文本框
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+\usepackage{colortbl}
+\tcbset{colframe = blue!50!black, colback = white,
+	colupper = red!50!black, fonttitle = \bfseries,
+	nobeforeafter, center title}
+%更改脚注格式
+\usepackage{color}
+\renewcommand{\thefootnote}{\color{red}\arabic{footnote}}
+
+%插入代码
+\usepackage{listings}
+\lstset{%自己定制的MATLAB格式，用mcode字体为啥不太好？
+	backgroundcolor=\color{red!5!green!5!blue!0},%代码块背景色为浅灰色
+	rulesepcolor= \color{gray}, %代码块边框颜色
+	breaklines=true,  %代码过长则换行
+	numbers=left, %设置行号位置
+	numberstyle=\scriptsize, %设置行号大小
+	basicstyle=\ttfamily,% 基本代码风格
+	keywordstyle=\color{blue}, %设置关键字颜色\bfseries
+	commentstyle=\rmfamily\color[cmyk]{1,0,1,0}, %设置注释颜色
+	stringstyle=\ttfamily\color{red!60!green!40!blue!80},
+	frame=shadowbox,%用方框框住代码块
+	%frame=singl
+	escapeinside=``, %逃逸字e, %设置边框格式符(1左面的键)，用于显示中文
+	extendedchars=false, %解决代码跨页时，章节标题，页眉等汉字不显示的问题
+	xleftmargin=2em,xrightmargin=2em, aboveskip=1em, %设置边距
+	tabsize=4, %设置tab空格数
+	showspaces=false, %不显示空格
+	showstringspaces=false,
+	captionpos=t,% 这段代码的名字所呈现的位置，t指的是top上面
+	columns=fullflexible
+}
+%\usepackage[framed,numbered,useliterate]{mcode}
+%basicstyle= \sffamily,% 基本代码风格
+%stringstyle= \ttfamily,
+%commentstyle=\rmfamily\itshape,%注释的风格，斜体
+
+%罗马数字
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+%写化学式
+\usepackage[version=4]{mhchem}
