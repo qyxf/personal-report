@@ -72,18 +72,26 @@
 \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
 
 % 定义页眉和页脚
-%\iffalse　　%注释开始
-\comment{
+\comment{}
 \usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{pgfornament-han,pgfornament}
+\newcommand{\footdeco}{
+	\resizebox{10em}{5ex}{
+		\begin{tikzpicture}
+		\node at (0,0) {\pgfornamenthan[scale=0.05]{58}};
+		\node[opacity=0.2, draw opacity=0] at (0.02,-0.03) {\pgfornamenthan[scale=0.05]{58}};
+		\end{tikzpicture}}\\[-1ex]}
 \newcommand{\makeheadrule}{
-	\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
+	%\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
 	\rule{\textwidth}{0.5pt}}
 \renewcommand{\headrule}{
 	{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
 		\makeheadrule}}
-\pagestyle{fancyplain}
-%\fi　　　%注释结束
-}
+\newcommand{\thetitle}{\makeatletter\@title\makeatother}
+\lhead{\heiti 这里还没弄好}%\thetitle
+\fancyhead[R]{第 \bfseries\thepage 页}
+\fancyfoot[C]{\footdeco \heiti 西安交通大学实验报告}
 
 \usepackage{abstract}%修改摘要
 \newcommand{\heiabstract}{\noindent\hei 摘要：\song}
