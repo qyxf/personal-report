@@ -14,6 +14,7 @@
 \usepackage{changepage}
 \usepackage{siunitx}%输入角度
 \usepackage{appendix}
+\newcommand{\mycomment}[1]{}%自定义注释。。
 
 %修改字体，不会就去看刘海洋的书，不要自己瞎鼓捣
 %ctex有的就直接用命令字体，可以不用这样调用\setCJKfamilyfont。当然renew后方便些
@@ -60,6 +61,7 @@
 \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
 \newcommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}
 \newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoyi}{\fontsize{24pt}{\baselineskip}\selectfont}
 \newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
 \newcommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}
 \newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
@@ -99,15 +101,26 @@
 \newtoks\partner%同组成员
 
 % 定义页眉和页脚
+\mycomment{}
 \usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{pgfornament-han,pgfornament}
+\newcommand{\footdeco}{
+	\resizebox{10em}{5ex}{
+		\begin{tikzpicture}
+		\node at (0,0) {\pgfornamenthan[scale=0.05]{58}};
+		\node[opacity=0.2, draw opacity=0] at (0.02,-0.03) {\pgfornamenthan[scale=0.05]{58}};
+		\end{tikzpicture}}\\[-1ex]}
 \newcommand{\makeheadrule}{
-	\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
+	%\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
 	\rule{\textwidth}{0.5pt}}
 \renewcommand{\headrule}{
 	{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
 		\makeheadrule}}
-\pagestyle{fancyplain}
-%有时文章较短，不需要显示章节标题
+%\newcommand{\thetitle}{\makeatletter\@title\makeatother}
+%\lhead{\heiti 这里还没弄好}%\thetitle
+%\fancyhead[R]{第 \bfseries\thepage 页}
+\fancyfoot[C]{\footdeco \heiti 西安交通大学课程作业}
 
 %tikz
 \usepackage{tikz}

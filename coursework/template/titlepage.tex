@@ -1,16 +1,24 @@
 %标题页格式
 \makeatletter
-\renewcommand*\maketitle{%
-	\begin{center}% 居中标题
-		\begin{center} 
-			\song\erhao  课程作业 
-			
-			\vspace{4em}
-			\heiti\erhao \@title\par 
-		\end{center}
+
+\begin{titlepage}
+	\begin{center}
+		\begin{figure*}[!ht]\vspace{2em}
+			\centering
+			\includegraphics[width=0.5\textwidth]{xjtu}
+		\end{figure*}
 		
-		\vspace{8em}
-		{\sanhao
+		\begin{center} 
+			\vspace{1em}	
+			\heiti\erhao  课程作业 
+			
+			\vspace{3em}			
+		\end{center}
+		\begin{center}% 居中标题
+			\heiti\chuhao \@title\par 
+			\vspace{1.5em}
+			
+			{\sanhao\songti
 			\begin{center} \renewcommand{\arraystretch}{1.5}
 				\begin{tabular}{c}
 					姓名：\@author \\
@@ -22,30 +30,20 @@
 					%同组成员：\the\partner \\%待修改
 				\end{tabular} \renewcommand{\arraystretch}{1}
 			\end{center} 
-		}
-		{\global\let\author\@empty}%
-		{\global\let\date\@empty}%
-	\end{center}%
-	\setcounter{footnote}{0}%
-}
-\makeatother
-
-\begin{titlepage}
-	\begin{center}
-		\begin{figure*}[!ht]\vspace{5em}
-			\centering
-			\includegraphics[width=0.5\textwidth]{xjtu}
-		\end{figure*}
-		
-		\vspace{1.5em}
-		\maketitle
+			}
+			{\global\let\author\@empty}%
+			{\global\let\date\@empty}%
+		\end{center}%
+		\setcounter{footnote}{0}%
 	\end{center}
 	\begin{tikzpicture}[remember picture, overlay]
-	\begin{pgfonlayer}{background}
-	\node at ($(current page.east) +(0in,-2.5in)$) {%
-		\includegraphics[width=0.8\textwidth]{cover.png}};
-	\end{pgfonlayer}
+		\begin{pgfonlayer}{background}
+		\node at ($(current page.east) +(0in,-2.5in)$) {%
+			\includegraphics[width=0.8\textwidth]{cover.png}};
+		\end{pgfonlayer}
 	\end{tikzpicture}
 	\clearpage{\pagestyle{empty}\cleardoublepage}
 \end{titlepage}
+\makeatother
+
 \newpage
