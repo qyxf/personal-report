@@ -19,15 +19,14 @@
 %修改字体，不会就去看刘海洋的书，不要自己瞎鼓捣
 \usepackage{fontspec, xunicode, xltxtra}
 \usepackage{xeCJK}		%中文字体
-%ctex有的就直接用命令字体，可以不用这样调用\setCJKfamilyfont。当然renew后方便些
 %\setCJKfamilyfont{song}{SimSun}         %宋体 song,\songti
-%\newcommand{\song}{\CJKfamily{song}}                        
+\newcommand{\song}{\CJKfamily{song}}                        
 %\setCJKfamilyfont{fs}{FangSong_GB2312} %仿宋2312 fs,\fangsong
-%\newcommand{\fs}{\CJKfamily{fs}}                            
+\newcommand{\fs}{\CJKfamily{fs}}                            
 %\setCJKfamilyfont{yh}{Microsoft YaHei}  %微软雅黑 yh,\yahei 
-%\newcommand{\yh}{\CJKfamily{yh}}  
+\newcommand{\yh}{\CJKfamily{yh}}  
 %\setCJKfamilyfont{hei}{SimHei}          %黑体  hei,\heiti 
-%\newcommand{\hei}{\CJKfamily{hei}}    
+\newcommand{\hei}{\CJKfamily{hei}}    
 %\setCJKfamilyfont{hwxh}{STXihei}        %华文细黑  hwxh  
 \newcommand{\hwxh}{\CJKfamily{hwxh}}
 %\setCJKfamilyfont{asong}{Adobe Song Std}%Adobe 宋体  asong  
@@ -36,15 +35,42 @@
 \newcommand{\ahei}{\CJKfamily{ahei}}  
 %\setCJKfamilyfont{akai}{Adobe Kaiti Std}%Adobe 楷体  akai,\kaishu  
 \newcommand{\akai}{\CJKfamily{akai}}
+%\setCJKfamilyfont{hwsong}{STSong}                            %华文宋体  hwsong
+\newcommand{\hwsong}{\CJKfamily{hwsong}}
+%\setCJKfamilyfont{hwzs}{STZhongsong}                        %华文中宋  hwzs
+\newcommand{\hwzs}{\CJKfamily{hwzs}}
+%\setCJKfamilyfont{hwfs}{STFangsong}                            %华文仿宋  hwfs
+\newcommand{\hwfs}{\CJKfamily{hwfs}}
+%\setCJKfamilyfont{hwl}{STLiti}                                        %华文隶书  hwl
+\newcommand{\hwl}{\CJKfamily{hwl}}
+%\setCJKfamilyfont{hwxw}{STXinwei}                                %华文新魏  hwxw
+\newcommand{\hwxw}{\CJKfamily{hwxw}}
+%\setCJKfamilyfont{hwk}{STKaiti}                                    %华文楷体  hwk
+\newcommand{\hwk}{\CJKfamily{hwk}}
+%\setCJKfamilyfont{hwxk}{STXingkai}                            %华文行楷  hwxk
+\newcommand{\hwxk}{\CJKfamily{hwxk}}
+%\setCJKfamilyfont{hwcy}{STCaiyun}                                 %华文彩云 hwcy
+\newcommand{\hwcy}{\CJKfamily{hwcy}}
+%\setCJKfamilyfont{hwhp}{STHupo}                                 %华文琥珀   hwhp
+\newcommand{\hwhp}{\CJKfamily{hwhp}}
+%\setCJKfamilyfont{fzsong}{Simsun (Founder Extended)}     %方正宋体超大字符集   fzsong
+\newcommand{\fzsong}{\CJKfamily{fzsong}}
+%\setCJKfamilyfont{fzyao}{FZYaoTi}                                    %方正姚体  fzy
+\newcommand{\fzyao}{\CJKfamily{fzyao}}
+%\setCJKfamilyfont{fzshu}{FZShuTi}                                    %方正舒体 fzshu
+\newcommand{\fzshu}{\CJKfamily{fzshu}}
 
-%\setCJKsansfont{\hei}%serif是有衬线字体sans serif无衬线字体。
+
+\setCJKsansfont{\hei}%serif是有衬线字体sans serif无衬线字体。
 %\setCJKmonofont{\fs}%mono字体
 %\setCJKmainfont{Microsoft YaHei}  % 微软雅黑
-%\setCJKmainfont{YouYuan}  % 幼圆
+%\setCJKmainfont{YouYuan}  % 幼圆，没有
+%\setCJKmainfont{LiShu}  % 隶书
 %\setCJKmainfont{NSimSun}  % 新宋体
 %\setCJKmainfont{KaiTi}    % 楷体
-\setCJKmainfont{SimSun}   % 宋体
+%\setCJKmainfont{SimSun}   % 宋体
 %\setCJKmainfont{\hei}   % 黑体
+%\setCJKmainfont{Segoe UI} %GitHub主题，不认中文
 
 % -- 英文字体 --
 \setmainfont{Times New Roman}

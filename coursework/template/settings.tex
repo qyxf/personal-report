@@ -36,15 +36,42 @@
 \newcommand{\ahei}{\CJKfamily{ahei}}  
 %\setCJKfamilyfont{akai}{Adobe Kaiti Std}%Adobe 楷体  akai,\kaishu  
 \newcommand{\akai}{\CJKfamily{akai}}
+%\setCJKfamilyfont{hwsong}{STSong}                            %华文宋体  hwsong
+\newcommand{\hwsong}{\CJKfamily{hwsong}}
+%\setCJKfamilyfont{hwzs}{STZhongsong}                        %华文中宋  hwzs
+\newcommand{\hwzs}{\CJKfamily{hwzs}}
+%\setCJKfamilyfont{hwfs}{STFangsong}                            %华文仿宋  hwfs
+\newcommand{\hwfs}{\CJKfamily{hwfs}}
+%\setCJKfamilyfont{hwl}{STLiti}                                        %华文隶书  hwl
+\newcommand{\hwl}{\CJKfamily{hwl}}
+%\setCJKfamilyfont{hwxw}{STXinwei}                                %华文新魏  hwxw
+\newcommand{\hwxw}{\CJKfamily{hwxw}}
+%\setCJKfamilyfont{hwk}{STKaiti}                                    %华文楷体  hwk
+\newcommand{\hwk}{\CJKfamily{hwk}}
+%\setCJKfamilyfont{hwxk}{STXingkai}                            %华文行楷  hwxk
+\newcommand{\hwxk}{\CJKfamily{hwxk}}
+%\setCJKfamilyfont{hwcy}{STCaiyun}                                 %华文彩云 hwcy
+\newcommand{\hwcy}{\CJKfamily{hwcy}}
+%\setCJKfamilyfont{hwhp}{STHupo}                                 %华文琥珀   hwhp
+\newcommand{\hwhp}{\CJKfamily{hwhp}}
+%\setCJKfamilyfont{fzsong}{Simsun (Founder Extended)}     %方正宋体超大字符集   fzsong
+\newcommand{\fzsong}{\CJKfamily{fzsong}}
+%\setCJKfamilyfont{fzyao}{FZYaoTi}                                    %方正姚体  fzy
+\newcommand{\fzyao}{\CJKfamily{fzyao}}
+%\setCJKfamilyfont{fzshu}{FZShuTi}                                    %方正舒体 fzshu
+\newcommand{\fzshu}{\CJKfamily{fzshu}}
+
 
 \setCJKsansfont{\hei}%serif是有衬线字体sans serif无衬线字体。
 %\setCJKmonofont{\fs}%mono字体
 %\setCJKmainfont{Microsoft YaHei}  % 微软雅黑
-%\setCJKmainfont{YouYuan}  % 幼圆
+%\setCJKmainfont{YouYuan}  % 幼圆，没有
+%\setCJKmainfont{LiShu}  % 隶书
 %\setCJKmainfont{NSimSun}  % 新宋体
 %\setCJKmainfont{KaiTi}    % 楷体
-\setCJKmainfont{SimSun}   % 宋体
+%\setCJKmainfont{SimSun}   % 宋体
 %\setCJKmainfont{\hei}   % 黑体
+%\setCJKmainfont{Segoe UI} %GitHub主题，不认中文
 
 % -- 英文字体 --
 \setmainfont{Times New Roman}
@@ -84,6 +111,12 @@
 %\CTEXsetup[format={\hei}]{section}
 %\CTEXsetup[format={\hei}]{subsection}
 %\CTEXsetup[format={\hei}]{subsubsection}
+%修改章节标题为中文
+\usepackage{zhnumber}
+%\renewcommand\thesection{\zhnum{section}}
+%\renewcommand \thesubsection {\arabic{subsection}}
+%\renewcommand \thesubsubsection {\arabic{subsection}.\arabic{subsubsection}}
+
 
 %参考文献
 \usepackage{natbib}
