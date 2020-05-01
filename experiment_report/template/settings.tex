@@ -106,7 +106,7 @@
 	\resizebox{10em}{5ex}{
 		\begin{tikzpicture}
 		\node at (0,0) {\pgfornamenthan[scale=0.05]{58}};
-		\node[opacity=0.2, draw opacity=0] at (0.02,-0.03) {\pgfornamenthan[scale=0.05]{58}};
+		\node[opacity=0.2, draw opacity=0, draw=black] at (0.02,-0.03) {\pgfornamenthan[scale=0.05]{58}};
 		\end{tikzpicture}}\\[-1ex]}
 \newcommand{\makeheadrule}{
 	%\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
@@ -118,6 +118,14 @@
 \lhead{\heiti 这里还没弄好}%\thetitle
 \fancyhead[R]{第 \bfseries\thepage 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学实验报告}
+
+%章节
+\definecolor{mygreen}{RGB}{0,120,2}
+\usepackage{titlesec}
+\titleformat{\section}[hang]{\Large\color{mygreen}\heiti\bfseries}{
+	\Large\bfseries{\color{mygreen}\thesection}\enspace}{1pt}{}
+\titleformat{\subsection}[hang]{\large\color{cyan}\heiti\bfseries}{
+	\large\bfseries{\color{cyan}\thesubsection}\enspace}{1pt}{}
 
 \usepackage{abstract}%修改摘要
 \newcommand{\heiabstract}{\noindent\hei 摘要：\song}
@@ -142,10 +150,10 @@
 
 %自定义微分号
 \newcommand{\di}[1]{\mathrm{d}#1}
-\newcommand{\p}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pp}[2]{\frac{\partial ^2 #1}{\partial #2 ^2}}
-\newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
-\newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
+\newcommand{\p}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\pp}[2]{\dfrac{\partial ^2 #1}{\partial #2 ^2}}
+\newcommand{\dy}[2]{\dfrac{\di{#1}}{\di{#2}}}
+\newcommand{\ddy}[2]{\dfrac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
 
 %一些特殊命令的宏包和设置
 \usepackage[version=4]{mhchem}%写化学式
