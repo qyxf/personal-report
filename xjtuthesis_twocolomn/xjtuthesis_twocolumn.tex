@@ -1,7 +1,8 @@
 \documentclass[UTF8,a4paper,12pt,twocolumn]{ctexart}
-\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry} %页边距
+\usepackage[left=1.8cm, right=1.8cm, top=2.54cm, bottom=2.54cm]{geometry} %页边距
 
 \input{settings.tex}%设置
+\graphicspath{{figs/}}
 
 %公式按照section标号
 %\makeatletter
@@ -9,65 +10,62 @@
 %\makeatother
 %\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
 
-\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%单元格内强制换行
 \usepackage{setspace}%调整表格行间距
+\linespread{1}%单倍行距
 
-\title{关于摩擦振子的研讨}
-\author{赵泽天，高旭帆，王樸枫，叶书航}
-\subtitle{周二2-12组（作者为作报告顺序）}
-%\remark
-\date{}
-\myabstract{摩擦振子是一经典的物理模型。我们分析了简单一维摩擦振子的动力学模型，然后提出了十字杆模型和二维简单模型。对于二维简单模型，我们进行理论分析，得到动力学方程，并用MATLAB进行数值模拟，发现物体会绕垂直于两圆柱母线方向的轴做振幅增大的做简谐振动，最终总是会因振幅过大而掉落，而参数$\mu,v,a,\theta_0$等会影响掉落的时间；并且“简谐运动”的周期几乎不变。我们用乐高搭建简易装置进行实验，发现两者规律基本吻合。
-	
-具体写出研究的目的、方法、结果和结论，方法模型写出原理和步骤以及特点和优势，结论要具体，不看全文都能具体了解并吸引读者阅读。应该包涵结论部分的主要内容。（5号楷体）至少要有一个有工程背景；要在篇名和摘要中出现过；不用缩写词（5号楷体）}
-\mykeywords{摩擦振子；简谐振动；数值模拟；实验验证}
+\title{西安交通大学论文\LaTeX 模板（2号黑体）} %要求简洁、明确、有吸引力，回避“基于”，最好给自己的方法起个名字
+\author{高旭帆（5号宋体）}
+\institute{（西安交通大学，生命学院，西安\hspace{0.5em}710049）（小5号宋体）}
+\date{\today}
+\myabstract{具体写出研究的目的、方法、结果和结论，方法模型写出原理和步骤以及特点和优势，结论要具体，不看全文都能具体了解并吸引读者阅读。应该包涵结论部分的主要内容。（5号楷体）}
+\mykeywords{至少要有一个有工程背景；要在篇名和摘要中出现过；不用缩写词（5号楷体）}
 %中图分类号（5号黑体）：按学科自己查（5号楷体）
-%引言目的是交代研究的背景、意义，通过对前人的工作归纳、概括以后，找出问题所在，提出研究的主题，阐明命题的依据——立论，交代问题解决的思路（不要具体交代正文的标题）。用自己的语言概括，避免罗列文献的表述——对现有文献的把握能力也体现作者的水平。措词要精炼，要吸引读者读下去。（5号宋体）
-%首页页脚(使用WORD中的“页眉/页脚”)：收稿日期：2018-00-00. 作者简介：作者名（1986-），男，博士生；通信作者名（通信作者），男，教授. 基金项目：国家自然科学基金资助项目（编号）.（小5号宋体）
+\firstpagefoot{首页页脚(使用WORD中的“页眉/页脚”)：收稿日期：2018-00-00. 作者简介：作者名（1986-），男，博士生；通信作者名（通信作者），男，教授. 基金项目：国家自然科学基金资助项目（编号）.（小5号宋体）}
 
 
 %ctexart中默认行距是字号的 1.56 倍，但这里环境间的行距还没有解决
 \begin{document}
 \maketitle
-
-\wuhao\linespread{0.8}
-我们抽到的题目是：
-
-\vspace{0.5em}
-\noindent\begin{tcolorbox}
-\fangsong
-摩擦振子：一个大块的物体被放置在两个相同的平行水平圆柱体上。两个圆柱各自以相同的角速度旋转，但方向相反。研究物体在圆柱体上的运动如何依赖于相关参数。
-
-Friction Oscillator：A massive object is placed onto two identical parallel horizontal cylinders. The two cylinders each rotate with the same angular velocity, but in opposite directions. Investigate how the motion of the object on the cylinders depends on the relevant parameters.
-\end{tcolorbox}
-\songti
+\thispagestyle{fancy}
+\pagestyle{empty}
+\wuhao
 
 \section{一级标题，4号宋体}
-正文内容：标题，以最恰当、最简明的词语反映论文章节中最重要的特定内容，需要考虑有助于理解和二次文献索引需要。（5号宋体）
+引言目的是交代研究的背景、意义，通过对前人的工作归纳、概括以后，找出问题所在，提出研究的主题，阐明命题的依据——立论，交代问题解决的思路（不要具体交代正文的标题）。用自己的语言概括，避免罗列文献的表述——对现有文献的把握能力也体现作者的水平。措词要精炼，要吸引读者读下去。（5号宋体）
 
 \subsection{二级标题，5号黑体}
 
+正文内容：标题，以最恰当、最简明的词语反映论文章节中最重要的特定内容，需要考虑有助于理解和二次文献索引需要。（5号宋体）
+
 \subsubsection{三级标题，可有可无，也可以使用一般序号，若有用5号楷体}
+
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.45\textwidth]{1d_model.png}
 	\caption{简单的一维模型}\label{fig:1d_model}
 \end{figure}
 
+我们抽到的题目是：
+
+\vspace{0.5em}
+\noindent\begin{tcolorbox}
+	\fangsong
+	摩擦振子：一个大块的物体被放置在两个相同的平行水平圆柱体上。两个圆柱各自以相同的角速度旋转，但方向相反。研究物体在圆柱体上的运动如何依赖于相关参数。
+	
+	Friction Oscillator：A massive object is placed onto two identical parallel horizontal cylinders. The two cylinders each rotate with the same angular velocity, but in opposite directions. Investigate how the motion of the object on the cylinders depends on the relevant parameters.
+\end{tcolorbox}
+\songti
 
 
+
+%参考文献
+\xiaowu\songti
 \begin{thebibliography}{100}
-	\xiaowu\songti
-	\bibitem{1}	参考文献：（5号黑体）
-	[1] [连续出版物]作者.文题[J].刊名，年，卷(期)：起止页码.（中英文对照）
-	
-	[2] [专著]作者.书名[M].出版地：出版者，出版年：起止页码.
-	
-	[3] [论文集]作者.文题[C]//论文集.论文集出版地：论文集出版者，出版年：起止页码.
-	
-	[4] [专利]申请者.专利名[P].国名及专利号，发布日期.
-	
-	[5] [在线电子文献]作者.文题[EB/OL].[下载日期].http://…. （小5号宋体）
+	\bibitem{1} [连续出版物]作者.文题[J].刊名，年，卷(期)：起止页码.（中英文对照）
+	\bibitem{2} [专著]作者.书名[M].出版地：出版者，出版年：起止页码.
+	\bibitem{3} [论文集]作者.文题[C]//论文集.论文集出版地：论文集出版者，出版年：起止页码.
+	\bibitem{4} [专利]申请者.专利名[P].国名及专利号，发布日期.
+	\bibitem{5} [在线电子文献]作者.文题[EB/OL].[下载日期].http://…. （小5号宋体）
 \end{thebibliography}
 %使用bib文件
 %\bibliographystyle{./template/gbt7714-unsrt}

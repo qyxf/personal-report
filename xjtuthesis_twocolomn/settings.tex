@@ -97,41 +97,39 @@
 \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
 
 \usepackage{abstract}%修改摘要
-\newcommand{\heiabstract}{\noindent\heiti 摘\hspace{1em}要：\songti}
-\newcommand{\heikeyword}{\noindent\heiti 关键词：\songti}
 \newtoks\myabstract%摘要
 \newtoks\mykeywords%关键词
-%\newcommand{\heirefname}{\heiti 参考文献：\song}
+\renewcommand{\refname}{\wuhao\heiti 参考文献}
 \renewcommand{\abstractname}{}%改摘要的格式
 \newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}%参考文献的上标引用
 
 %标题
-\newtoks\subtitle
+\newtoks\institute
 \makeatletter
 \renewcommand*\maketitle{%
 	\linespread{0.8}	
 	\twocolumn[
 	\begin{center}
 		
-		\xiaoer\heiti \@title\par 
+		\erhao\heiti \@title\par 
 		
 		\begin{center} \renewcommand{\arraystretch}{1.5}
 			\begin{tabular}{c}
-				\xiaosi\fangsong	\@author \\
-				\liuhao\songti		\the\subtitle \\
-				\@date \\
+				\wuhao\songti	\@author \\
+				\xiaowu\songti	\the\institute
 			\end{tabular} \renewcommand{\arraystretch}{1}
 		\end{center} 
 		{\global\let\author\@empty}%
 		{\global\let\date\@empty}%
 	\end{center}%
 	\linespread{1.0}
-	\vspace{-5em}
+	\vspace{-4em}
 	\begin{onecolabstract}
 	\linespread{1.1}
-	\xiaowu\heiabstract \the\myabstract
+	\wuhao
+	\noindent\heiti 摘\hspace{1em}要： \kaishu\the\myabstract
 
-	\heikeyword \the\mykeywords
+	\noindent\heiti 关键词：\kaishu\the\mykeywords
 	\vspace{1.5em}
 	\end{onecolabstract}]
 	\setcounter{footnote}{0}%
@@ -140,9 +138,9 @@
 
 %修改章节标题的字体，ctexart才能用
 %用了ctexart，还使章节标题居中
-\CTEXsetup[format={\xiaosi\heiti}]{section}
+\CTEXsetup[format={\xiaosi\songti}]{section}
 \CTEXsetup[format={\wuhao\heiti}]{subsection}
-\CTEXsetup[format={\xiaowu\heiti}]{subsubsection}
+\CTEXsetup[format={\wuhao\kaishu}]{subsubsection}
 %参考文献为小四黑体
 
 %修改章节标题为中文
@@ -156,11 +154,22 @@
 %\usepackage[super]{gbt7714}%authoryear
 %用选项代替\bibliographystyle{gbt7714-plain}unsrt
 
+\usepackage{fancyhdr}
+\newtoks\firstpagefoot
+%\newcommand{\makeheadrule}{
+%	%\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
+%	\rule{\textwidth}{0.5pt}}
+%\renewcommand{\headrule}{
+%	{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+%		\makeheadrule}}
+\renewcommand{\headrulewidth}{0.5pt}      %把页眉线的宽度设为零，即去掉页眉线
+\renewcommand{\footrulewidth}{0.5pt}
+\lfoot{\xiaowu\songti \the\firstpagefoot}
+\fancyfoot[C]{}
+\rhead{\thepage}
+%\fancyhead[R]{第 \bfseries\thepage 页}
+%\fancyfoot[C]{\heiti 西安交通大学课程作业}
 
-%\thispagestyle{empty}       %本页不显示页码
-%\newpage                    %分页
-%\tableofcontents\thispagestyle{empty}
-%\setcounter{page}{1}        %从下面开始编页，页脚格式为导言部分设置的格式
 
 \usepackage{enumitem}%修改列表环境
 \setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
@@ -174,7 +183,7 @@
 \newcommand{\dy}[2]{\frac{\di{#1}}{\di{#2}}}
 \newcommand{\ddy}[2]{\frac{\mathrm{d} ^2 #1}{\mathrm{d} #2 ^2}}
 
-
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%单元格内强制换行
 
 % 定义页眉和页脚
 \usepackage{fancyhdr}
