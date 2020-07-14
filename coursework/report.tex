@@ -29,10 +29,12 @@
 \mykeywords{西安交通大学；课程作业论文；\LaTeX{} 模板}
 
 \begin{document}
-%% 设置标题
-\input{./template/titlepage.tex}%标题，单独页
-\input{./template/abstract.tex}%摘要	
-%\input{./template/normaltitle.tex}%正常标题
+% 设置标题
+\input{./template/titlepage.tex}%单独页标题
+\input{./template/abstract.tex}%单独页摘要	
+%\input{./template/normaltitle_onecolumn.tex}%正常标题+摘要
+%\input{./template/normaltitle_twocolumn.tex}%双栏版，可能要调列表行距
+%1,3、2,3不要混用
 
 
 
@@ -49,8 +51,6 @@ TeX系统是由Pascal语言编写的，程序的源代码也是公开的。它�
 LaTeX是由美国计算机学家Leslie Lamport于1985年开发成功的。尽管在排版数学公式和数学符号方便LaTeX不如AMSTeX，但LaTeX提供了大量易于学习和使用的命令，如非常有用的交叉引用命令（cross－referencing commands），这是AMSTeX所不具备的。因而LaTeX有更广泛的用途，特别是在排版信件、书刊、诗集等方面更优于AMSTeX。TeX的命令好比是建筑所使用的各种各样的材料，优秀的建筑师用它能建造出各种美丽的建筑；LaTeX的命令好比是已经建筑好的各种各样的房间和家具，用户只需选择适合自己的房间和家具就能得到满意的住所，而且这种房间和家具之多几乎无须用户自己动手建造。为了使用户既能使用LaTeX提供的大量命令，又能排版出优美的数学公式和数学符号，美国数学会又开发了AMSTeX。TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，就举几个吧。word中数学公式是以图片形式保存的，一旦公式和图片多的话则很容易死机，偶在竞赛中则吃过大亏，在全国赛和国际赛中都发生过这些情况，辛辛苦苦写了很多，但是全部没了，那时真是欲哭无泪啊。现在是学乖了，用word写论文时时常按ctrl+s。并且不同版本不兼容，xp版本到2000版本就出现很严重的不兼容问题。而LaTeX则不会出现这种情况。用word写论文时可以发现当公式或数学符号在某行中时则行距撑的艽罅耍帜芽矗琇aTeX则不会出现这种问题。说到公式和数学符号则可很明显的感觉到word和LaTeX 的不同了，爱美之心人皆有之，学数学的很大程度也是因为被数学的美所深深的吸引而迷恋数学。而LaTeX排版出来的数学公式则比word要漂亮的多了。此外在写论文的时候对参考文献十分头痛，而LaTeX则在这个方面不要比word显的太强悍啊。
 
 介绍了这么多LaTeX并不是说明LaTeX比word怎么怎么牛，每个事务存在就有它存在的的价值，word在很多地方有比LaTeX很明显的优势。只不过在数学论文这个方面LaTeX要比word强太多了，故而介绍这么多，推荐使用LaTeX写数学论文。
-
-
 
 
 \section{例子}
@@ -124,9 +124,8 @@ LaTeX是由美国计算机学家Leslie Lamport于1985年开发成功的。尽管
 \subsection{实验总结与体会}
 通过对回归分析及MATLAB软件在概率统计中的应用两章的自学，在查找资料和咨询老师同学的过程中，我对MATLAB软件在概率论这门课程中的应用有了更加深入的了解，掌握了一定的技能，并且更直观的看到了概率统计的意义，在此过程中也对许多概念有了更加深入的了解和感悟，十分有益于概率论课程的学习。
 
+一个实验报告的例子
 
-\Huge 一个实验报告的例子
-\normalsize
 
 \section{实验原理}
 \subsection{1}
@@ -189,8 +188,14 @@ LaTeX是由美国计算机学家Leslie Lamport于1985年开发成功的。尽管
 
 
 \appendix
+%\renewcommand{\appendixname}{Appendix~\Alph{section}}
 \addappheadtotoc%添加进目录
+
 \newpage
+
+\begin{center}
+	\Huge\bfseries\heiti 附录 % Appendix
+\end{center}
 
 \section{code}
 

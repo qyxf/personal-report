@@ -100,8 +100,8 @@
 
 %修改摘要
 \usepackage{abstract}
-\newcommand{\heiabstract}{\noindent{\xiaosi\selectfont\hei 摘\hspace{0.5em}要：}}
-\newcommand{\heikeyword}{\noindent{\xiaosi\selectfont\hei 关\hspace{0.5em}键\hspace{0.5em}词：}}
+\newcommand{\heiabstract}{\noindent{\xiaosi\selectfont\heiti 摘\hspace{0.8em}要：}}
+\newcommand{\heikeyword}{\noindent{\xiaosi\selectfont\heiti 关键词：}}
 \newcommand{\heitypeofthesis}{\noindent{\xiaosi\selectfont\hei 论文类型：}}
 \newtoks\myabstract%摘要
 \newtoks\mykeywords%关键词
@@ -119,9 +119,10 @@
 
 
 %参考文献
-\usepackage{natbib}
+%\usepackage{natbib}
 \usepackage[super]{gbt7714}%authoryear
 %用选项代替\bibliographystyle{gbt7714-plain}unsrt
+%还有点乱，natbib和gbt二选一吧
 %\newcommand{\heirefname}{\hei 参考文献：\song}
 \renewcommand{\abstractname}{}%改摘要的格式
 \newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}%参考文献的上标引用
@@ -151,7 +152,8 @@
 		\makeheadrule}}
 %\newcommand{\thetitle}{\makeatletter\@title\makeatother}
 %\lhead{\heiti 这里还没弄好}%\thetitle
-%\fancyhead[R]{第 \bfseries\thepage 页}
+\fancyhead[L]{西安交通大学课程作业\LaTeX 模板}%可以改成标题
+\fancyhead[R]{第 {\bfseries\thepage} 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学课程作业}
 
 %tikz

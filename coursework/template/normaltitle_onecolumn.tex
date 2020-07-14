@@ -1,7 +1,6 @@
 \makeatletter
 \renewcommand*\maketitle{%
 	\linespread{0.8}	
-	\twocolumn[
 	\begin{center}
 		{\xiaoer\heiti \@title}
 		
@@ -16,14 +15,15 @@
 	\end{center}%
 	\linespread{1.0}
 	\vspace{-3.5em}
-	\begin{onecolabstract}
+	\begin{abstract}
 		\linespread{1.1}
-		\wuhao\heiti 摘\hspace{1em}要：\kaishu \the\myabstract
+		\wuhao\heiti 摘\hspace{0.8em}要：\kaishu \the\myabstract
 		
 		\wuhao\heiti 关键词：\kaishu \the\mykeywords
 		\vspace{1.5em}
-	\end{onecolabstract}]
-	\setcounter{footnote}{0}%
+	\end{abstract}
+	\setcounter{footnote}{0}
+	\setcounter{page}{0}
 }
 \makeatother
 
