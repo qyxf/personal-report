@@ -8,9 +8,9 @@
 	
 	\renewcommand{\arraystretch}{1.2}
 	\begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
-		\sanhao
+		\sanhao\songti
 		课程：\the\course 
-		\xiaosi
+		\xiaosi\songti
 		&实验日期：\the\exdate\\
 		专业班号：\the\class 
 		&提交日期：\@date\\
@@ -22,10 +22,13 @@
 	\renewcommand{\arraystretch}{1}
 
 	\noindent\rule{\linewidth}{1.5pt}
-	\vspace{0.5em}
+	\vspace{0pt}
 	
-	\heiti\erhao 实验名称：\@title
+	\heiti\erhao \noindent\begin{center}实验名称：\@title \end{center}
+	%\heiti\erhao {\noindent\hangafter=1 \setlength{\hangindent}{5em}  实验名称：\@title }
+	%\heiti\erhao {\setlength{\parindent}{5em} \raggedright\hspace{-5em}  实验名称：\@title }
 
 	\setcounter{footnote}{0}%
+	\normalfont
 }
 \makeatother

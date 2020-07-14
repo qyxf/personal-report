@@ -14,19 +14,20 @@
 \usepackage{changepage}
 \usepackage{siunitx}%输入角度
 \usepackage{setspace}%调行距
-\newcommand{\comment}[1]{}%自定义注释。。
+\usepackage{indentfirst}
 
 %修改字体，不会就去看刘海洋的书，不要自己瞎鼓捣
 \usepackage{fontspec, xunicode, xltxtra}
-\usepackage{xeCJK}		%中文字体
+\usepackage{xeCJK}%中文字体
+%ctex有的就直接用命令字体，可以不用这样调用\setCJKfamilyfont。当然renew后方便些
 %\setCJKfamilyfont{song}{SimSun}         %宋体 song,\songti
-\newcommand{\song}{\CJKfamily{song}}                        
+%\newcommand{\song}{\CJKfamily{song}}                        
 %\setCJKfamilyfont{fs}{FangSong_GB2312} %仿宋2312 fs,\fangsong
-\newcommand{\fs}{\CJKfamily{fs}}                            
+%\newcommand{\fs}{\CJKfamily{fs}}                            
 %\setCJKfamilyfont{yh}{Microsoft YaHei}  %微软雅黑 yh,\yahei 
-\newcommand{\yh}{\CJKfamily{yh}}  
+%\newcommand{\yh}{\CJKfamily{yh}}  
 %\setCJKfamilyfont{hei}{SimHei}          %黑体  hei,\heiti 
-\newcommand{\hei}{\CJKfamily{hei}}    
+%\newcommand{\hei}{\CJKfamily{hei}}    
 %\setCJKfamilyfont{hwxh}{STXihei}        %华文细黑  hwxh  
 \newcommand{\hwxh}{\CJKfamily{hwxh}}
 %\setCJKfamilyfont{asong}{Adobe Song Std}%Adobe 宋体  asong  
@@ -34,43 +35,36 @@
 %\setCJKfamilyfont{ahei}{Adobe Heiti Std}%Adobe 黑体  ahei  
 \newcommand{\ahei}{\CJKfamily{ahei}}  
 %\setCJKfamilyfont{akai}{Adobe Kaiti Std}%Adobe 楷体  akai,\kaishu  
-\newcommand{\akai}{\CJKfamily{akai}}
-%\setCJKfamilyfont{hwsong}{STSong}                            %华文宋体  hwsong
-\newcommand{\hwsong}{\CJKfamily{hwsong}}
-%\setCJKfamilyfont{hwzs}{STZhongsong}                        %华文中宋  hwzs
-\newcommand{\hwzs}{\CJKfamily{hwzs}}
+%\newcommand{\akai}{\CJKfamily{akai}}
 %\setCJKfamilyfont{hwfs}{STFangsong}                            %华文仿宋  hwfs
-\newcommand{\hwfs}{\CJKfamily{hwfs}}
+%\newcommand{\hwfs}{\CJKfamily{hwfs}}
 %\setCJKfamilyfont{hwl}{STLiti}                                        %华文隶书  hwl
-\newcommand{\hwl}{\CJKfamily{hwl}}
+%\newcommand{\hwl}{\CJKfamily{hwl}}
 %\setCJKfamilyfont{hwxw}{STXinwei}                                %华文新魏  hwxw
-\newcommand{\hwxw}{\CJKfamily{hwxw}}
+%\newcommand{\hwxw}{\CJKfamily{hwxw}}
 %\setCJKfamilyfont{hwk}{STKaiti}                                    %华文楷体  hwk
-\newcommand{\hwk}{\CJKfamily{hwk}}
+%\newcommand{\hwk}{\CJKfamily{hwk}}
 %\setCJKfamilyfont{hwxk}{STXingkai}                            %华文行楷  hwxk
-\newcommand{\hwxk}{\CJKfamily{hwxk}}
+%\newcommand{\hwxk}{\CJKfamily{hwxk}}
 %\setCJKfamilyfont{hwcy}{STCaiyun}                                 %华文彩云 hwcy
-\newcommand{\hwcy}{\CJKfamily{hwcy}}
+%\newcommand{\hwcy}{\CJKfamily{hwcy}}
 %\setCJKfamilyfont{hwhp}{STHupo}                                 %华文琥珀   hwhp
-\newcommand{\hwhp}{\CJKfamily{hwhp}}
+%\newcommand{\hwhp}{\CJKfamily{hwhp}}
 %\setCJKfamilyfont{fzsong}{Simsun (Founder Extended)}     %方正宋体超大字符集   fzsong
-\newcommand{\fzsong}{\CJKfamily{fzsong}}
+%\newcommand{\fzsong}{\CJKfamily{fzsong}}
 %\setCJKfamilyfont{fzyao}{FZYaoTi}                                    %方正姚体  fzy
-\newcommand{\fzyao}{\CJKfamily{fzyao}}
+%\newcommand{\fzyao}{\CJKfamily{fzyao}}
 %\setCJKfamilyfont{fzshu}{FZShuTi}                                    %方正舒体 fzshu
-\newcommand{\fzshu}{\CJKfamily{fzshu}}
+%\newcommand{\fzshu}{\CJKfamily{fzshu}}
 
-
-\setCJKsansfont{\hei}%serif是有衬线字体sans serif无衬线字体。
+%\setCJKsansfont{\hei}%serif是有衬线字体sans serif无衬线字体。
 %\setCJKmonofont{\fs}%mono字体
 %\setCJKmainfont{Microsoft YaHei}  % 微软雅黑
-%\setCJKmainfont{YouYuan}  % 幼圆，没有
-%\setCJKmainfont{LiShu}  % 隶书
+%\setCJKmainfont{YouYuan}  % 幼圆
 %\setCJKmainfont{NSimSun}  % 新宋体
 %\setCJKmainfont{KaiTi}    % 楷体
-%\setCJKmainfont{SimSun}   % 宋体
-%\setCJKmainfont{\hei}   % 黑体
-%\setCJKmainfont{Segoe UI} %GitHub主题，不认中文
+\setCJKmainfont[BoldFont=SimHei]{SimSun}   % 宋体
+%\setCJKsansfont{Heiti}   % 黑体
 
 % -- 英文字体 --
 \setmainfont{Times New Roman}
@@ -97,6 +91,11 @@
 \newcommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}
 \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
 
+\newcommand{\comment}[1]{}%自定义注释。。
+\newcommand{\redtext}[1]{\color{red} #1\color{black}}%红色字
+\newcommand{\bluetext}[1]{\color{blue} #1\color{black}}%蓝色字
+\newcommand{\heitext}[1]{{\heiti\bfseries #1}}%全黑体字
+
 % 定义页眉和页脚
 \comment{}
 \usepackage{fancyhdr}
@@ -113,25 +112,27 @@
 	\rule{\textwidth}{0.5pt}}
 \renewcommand{\headrule}{
 	{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+		\vskip-1pt%页眉文字与页眉线距离，暂时没用。。 
 		\makeheadrule}}
 \newcommand{\thetitle}{\makeatletter\@title\makeatother}
-\lhead{\heiti 这里还没弄好}%\thetitle
-\fancyhead[R]{第 \bfseries\thepage 页}
+\lhead{\heiti \the\exnumber. 肝组织中DNA的分离提取及鉴定}%\thetitle
+\fancyhead[R]{第 \bfseries\thepage\normalfont 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学实验报告}
 
 %章节
+%\renewcommand{\sectionmark}[1]{\markleft{\thesection\ #1}}
+%\fancyhead[L]{\bfseries\leftmark }
 \definecolor{mygreen}{RGB}{0,120,2}
+\definecolor{myblue}{RGB}{60,113,183}
+\definecolor{myorange}{RGB}{255,134,24}
 \usepackage{titlesec}
 \titleformat{\section}[hang]{\Large\color{mygreen}\heiti\bfseries}{
 	\Large\bfseries{\color{mygreen}\thesection}\enspace}{1pt}{}
-\titleformat{\subsection}[hang]{\large\color{cyan}\heiti\bfseries}{
-	\large\bfseries{\color{cyan}\thesubsection}\enspace}{1pt}{}
+\titleformat{\subsection}[hang]{\large\color{myblue}\heiti\bfseries}{
+	\large\bfseries{\color{myblue}\thesubsection}\enspace}{1pt}{}
+\titleformat{\subsubsection}[hang]{\normalsize\color{myorange}\heiti\bfseries}{
+	\normalsize\bfseries{\color{myorange}\thesubsubsection}\enspace}{1pt}{}
 
-\usepackage{abstract}%修改摘要
-\newcommand{\heiabstract}{\noindent\hei 摘要：\song}
-\newcommand{\heikeyword}{\noindent\hei 关键词：\song}
-%\newcommand{\heirefname}{\hei 参考文献：\song}
-\renewcommand{\abstractname}{}%改摘要的格式
 \newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}%参考文献的上标引用
 
 %一些信息
@@ -141,12 +142,18 @@
 \newtoks\course%课程名
 \newtoks\partner%同组成员
 \newtoks\exdate%实验日期
+\newtoks\exnumber%实验系列序号
 
 \usepackage{enumitem}%修改列表环境
-\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setenumerate[1]{itemsep=1pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=1pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setdescription[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setlist[enumerate,2]{label=\color{myblue}(\arabic*)}
 
+%表格
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+%思考题
 
 %自定义微分号
 \newcommand{\di}[1]{\mathrm{d}#1}
@@ -167,6 +174,24 @@
 		draw = black, thick, -{Latex[length = 4mm, width = 1.5mm]},
 	}
 }
+%\usetikzlibrary{backgrounds,calc,shadows}
+%\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+%		\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+%  https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
+% 更改item样式，来自elegantbook
+%\newcommand*{\eitemi}{\tikz \draw [baseline, ball color=myblue,draw=none] circle (2pt);}
+%\newcommand*{\eitemii}{\tikz \draw [baseline, fill=myblue,draw=none,circular drop shadow] circle (2pt);}
+%\newcommand*{\eitemiii}{\tikz \draw [baseline, fill=myblue,draw=none] circle (2pt);}
+%\setlist[enumerate,1]{label={\color{red}\arabic*.}}
+%\setlist[enumerate,2]{label=\color{myblue}(\alph*).}
+%\setlist[enumerate,3]{label=\color{myblue}\Roman*.}
+%\setlist[enumerate,4]{label=\color{myblue}\Alph*.}%这些做全局设置就好了
+%\setlist[itemize,1]{label={\color{myblue}\textbullet}}
+%\setlist[itemize,2]{label={\eitemii}}
+%\setlist[itemize,3]{label={\eitemiii}}
+
+%优化：背景带颜色？
+
 
 %插入代码
 \usepackage{listings}
@@ -199,3 +224,10 @@
 %附录格式
 %\usepackage{appendix}
 %\renewcommand{\appendixname}{Appendix~\Alph{section}}
+
+
+%罗马数字
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+%写化学式
+\usepackage[version=4]{mhchem}
