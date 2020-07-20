@@ -1,7 +1,10 @@
 %标题页格式
+\definecolor{MyLightBlue}{rgb}{0.8,1,1}
+
 \makeatletter
 
 \begin{titlepage}
+%	\pagecolor{MyLightBlue} % 背景颜色
 	\begin{center}
 		\begin{figure*}[!ht]\vspace{2em}
 			\centering
@@ -9,17 +12,21 @@
 		\end{figure*}
 		
 		\begin{center} 
-			\vspace{1em}	
+			\vspace{0.7em}	
 			\heiti\erhao  课程作业 
 			
-			\vspace{3.5em}			
+			\vspace{2.3em}			
 		\end{center}
 		\begin{center}% 居中标题
-			\heiti\chuhao \@title\par 
+			\heiti\chuhao \@title
+			
+			\vspace{0.5em}
+			\songti\yihao \the\subtitle
+						 
 			\vspace{2em}
 			
 			{\sanhao\songti
-			\begin{center} \renewcommand{\arraystretch}{1.5}
+			\begin{center} \renewcommand{\arraystretch}{1.3}
 				\begin{tabular}{c}
 					姓名：\@author \\
 					学号：\the\stuId \\
@@ -27,7 +34,6 @@
 					学院：\the\school \\
 					课程：\the\course\\
 					\@date \\
-					%同组成员：\the\partner \\%待修改
 				\end{tabular} \renewcommand{\arraystretch}{1}
 			\end{center} 
 			}

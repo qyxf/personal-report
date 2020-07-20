@@ -1,3 +1,4 @@
+%% 基本宏包和字体字号
 \usepackage{ctex}  
 \usepackage{amsmath, amsfonts, amssymb} % 数学公式相关宏包
 \usepackage{color}      % color content
@@ -98,6 +99,20 @@
 \newcommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}
 \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
 
+%% 基本页面和格式设置
+
+%\newif\ifbackgroundcolor\ifbackgroundcolorfalse % 是否添加背景颜色，默认为否
+%\ifbackgroundcolor
+%制作一个上下两种颜色的，类似Goodnotes	
+%\fi
+
+%一些信息
+\newtoks\subtitle%副标题
+\newtoks\stuId%学号
+\newtoks\class%班级
+\newtoks\school%学院
+\newtoks\course%课程名
+
 %修改摘要
 \usepackage{abstract}
 \newcommand{\heiabstract}{\noindent{\xiaosi\selectfont\heiti 摘\hspace{0.8em}要：}}
@@ -105,34 +120,6 @@
 \newcommand{\heitypeofthesis}{\noindent{\xiaosi\selectfont\hei 论文类型：}}
 \newtoks\myabstract%摘要
 \newtoks\mykeywords%关键词
-
-%修改章节标题的字体，ctexart才能用
-%用了ctexart，还使章节标题居中
-%\CTEXsetup[format={\hei}]{section}
-%\CTEXsetup[format={\hei}]{subsection}
-%\CTEXsetup[format={\hei}]{subsubsection}
-%修改章节标题为中文
-\usepackage{zhnumber}
-%\renewcommand\thesection{\zhnum{section}}
-%\renewcommand \thesubsection {\arabic{subsection}}
-%\renewcommand \thesubsubsection {\arabic{subsection}.\arabic{subsubsection}}
-
-
-%参考文献
-%\usepackage{natbib}
-\usepackage[super]{gbt7714}%authoryear
-%用选项代替\bibliographystyle{gbt7714-plain}unsrt
-%还有点乱，natbib和gbt二选一吧
-%\newcommand{\heirefname}{\hei 参考文献：\song}
-\renewcommand{\abstractname}{}%改摘要的格式
-\newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}%参考文献的上标引用
-
-%一些信息
-\newtoks\stuId%学号
-\newtoks\class%班级
-\newtoks\school%学院
-\newtoks\course%课程名
-\newtoks\partner%同组成员
 
 % 定义页眉和页脚
 \usepackage{fancyhdr}
@@ -156,6 +143,38 @@
 \fancyhead[R]{第 {\bfseries\thepage} 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学课程作业}
 
+%参考文献
+%\usepackage{natbib}
+\usepackage[super]{gbt7714}%authoryear
+%用选项代替\bibliographystyle{gbt7714-plain}unsrt
+%还有点乱，natbib和gbt二选一吧
+%\newcommand{\heirefname}{\hei 参考文献：\song}
+\renewcommand{\abstractname}{}%改摘要的格式
+\newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}%参考文献的上标引用
+
+%修改章节标题的字体，ctexart才能用
+%用了ctexart，还使章节标题居中
+%\CTEXsetup[format={\hei}]{section}
+%\CTEXsetup[format={\hei}]{subsection}
+%\CTEXsetup[format={\hei}]{subsubsection}
+%修改章节标题为中文
+\usepackage{zhnumber}
+%\renewcommand\thesection{\zhnum{section}}
+%\renewcommand \thesubsection {\arabic{subsection}}
+%\renewcommand \thesubsubsection {\arabic{subsection}.\arabic{subsubsection}}
+
+%修改列表环境
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt,leftmargin=2em}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+%更改脚注格式
+\usepackage{color}
+\renewcommand{\thefootnote}{\color{red}\arabic{footnote}}
+
+%% 升级设置
+
 %tikz
 \usepackage{tikz}
 \usetikzlibrary{calc,backgrounds}
@@ -169,13 +188,6 @@
 \RequirePackage{pgfornament-han}
 \RequirePackage{pgfornament}
 
-
-%修改列表环境
-\usepackage{enumitem}
-\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt,leftmargin=2em}
-\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
-
 %彩色文本框
 \usepackage{tcolorbox}
 \tcbuselibrary{skins, breakable, theorems}
@@ -183,9 +195,6 @@
 \tcbset{colframe = blue!50!black, colback = white,
 	colupper = red!50!black, fonttitle = \bfseries,
 	nobeforeafter, center title}
-%更改脚注格式
-\usepackage{color}
-\renewcommand{\thefootnote}{\color{red}\arabic{footnote}}
 
 %插入代码
 \usepackage{listings}
