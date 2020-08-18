@@ -1,4 +1,4 @@
-\documentclass[UTF8,12pt,a4paper,subtitle]{article}
+\documentclass[UTF8,12pt,a4paper]{article}
 \usepackage{ctex}
 \usepackage[top=2.54cm,bottom=2.54cm,left=2.8cm,right=2.8cm]{geometry}
 \usepackage{graphicx}
@@ -41,8 +41,19 @@
 \input{./template/titlepage.tex}%单独页标题
 %\input{./template/normaltitle.tex}%正常标题，需调整上面的选项
 %双栏版，可能要调列表行距
-%1,3、2,3不要混用
 
+
+\noindent 本demo提供的文档元素有：
+\begin{enumerate}
+	\item 文字
+	\item 各级标题
+	\item 两种列表
+	\item 表格
+	\item 行内、行间公式
+	\item 图片（单个、多个、subfigure）
+	\item 参考文献、附录、代码
+	\item tcolorbox
+\end{enumerate}
 
 \section{文字}
 \LaTeX 是一个功能强大的特别适合排版科技文献和书籍的格式化排版程序。它是由著名计算机专家和数学家斯坦福大学D.E.Knuth教授研制的。20世纪60年代，knuth准备出系列专著《计算机程序设计技巧》（The Arts of Computer Programming），前三册已经出版，当他正在撰写第四册时，出版社拿来第二册的第二版给他过目，结果令他大失所望，因为当时出版社的印刷技术没有使他的书稿更好看，反而变糟了，尤其是在数学公式和字体上面的缺陷更令他无法接受。于是他就打算自己写一个既能供科学家编排手稿又符合出版社印刷要求的高质量的计算机排版系统。这就是TeX排版系统的由来。
@@ -73,23 +84,14 @@ TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，�
 
 \section{实验步骤}
 \begin{enumerate}
-	\item 找到激光器电源模块，打开开关，出现激光。
-	\item 调节激光，保证功率在200mW以上，波长在532.8nm左右。
-	\item 第一个空间光调制器选择HG模式，输入合适的参数，观察光栅的样式，打开接收高阶高斯光的CCD相机，观察高阶高斯光。
-	\item 调节第一个空间光调制器的位置，进行微调，使得在CCD上观察到的高阶高斯光能够完全显示。
-	\item 转化成LG高斯模式，观察CCD上的图案。
-	\item 调节双柱透镜，保证其焦距是两个透镜间距的一半，高斯光通过之后转换高斯模式，通过CCD观察。
-	\item 调节第二个空间光调制器，选择分束模式。
-	\item 打开显微镜控制模块，产生显微镜照明灯光。
-	\item 打开最后一个CCD，调出微粒自旋的效果。
-	\item 让最后一个CCD上出现拉盖尔高阶高斯光，观察微粒自旋和公转的效果。
+	\item 
 \end{enumerate}
 
 \section{思考题}
-\begin{enumerate}
+\begin{itemize}
 	\item sf
 	\item df
-\end{enumerate}
+\end{itemize}
 
 \section{例子}
 \subsection{实验题目}
@@ -106,13 +108,6 @@ TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，�
 	\end{tabular}%
 	\label{tab:exercise8_3}%
 \end{table}%
-
-\begin{enumerate}
-	\item 画出散点图；
-	\item 试求回归系数及方差的估计值；
-	\item 对回归方程作显著性检验；
-	\item 求当$x_0=12$时，因变量$Y$的观测值$y_0$的预测值及置信度为$0.95$的置信区间。
-\end{enumerate}
 
 \subsection{所建立的数学模型、编程思想}
 该题应利用[b,bint,r,rint,stats]=regress(Y,X)函数来求解回归系数及其各项参数，从而通过stats(3)验证其显著性，stats（(4)即为其方差，而后根据所求参数构造函数并绘图。将$x_0$代入回归方程求解预测值，利用
