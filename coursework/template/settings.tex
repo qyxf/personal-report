@@ -113,6 +113,10 @@
 \newtoks\school%学院
 \newtoks\course%课程名
 
+\newif\ifsubtitleexist\subtitleexistfalse %是否添加副标题，默认为假
+\newif\iftwocolumn\twocolumnfalse %是否为双栏，默认为假（即单栏）
+\newif\ifabstractexist\abstractexistfalse %是否添加摘要，默认为假
+
 %修改摘要
 \usepackage{abstract}
 \newcommand{\heiabstract}{\noindent{\xiaosi\selectfont\heiti 摘\hspace{0.8em}要：}}
@@ -145,7 +149,7 @@
 
 %参考文献
 %\usepackage{natbib}
-\usepackage[super]{gbt7714}%authoryear
+%\usepackage[super]{gbt7714}%authoryear
 %用选项代替\bibliographystyle{gbt7714-plain}unsrt
 %还有点乱，natbib和gbt二选一吧
 %\newcommand{\heirefname}{\hei 参考文献：\song}

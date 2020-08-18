@@ -20,8 +20,12 @@
 		\begin{center}% 居中标题
 			\heiti\chuhao \@title
 			
-			\vspace{0.5em}
-			\songti\yihao \the\subtitle
+			\ifsubtitleexist
+				\vspace{0.5em}
+				\songti\yihao \the\subtitle
+			\else
+				\vspace{1em}
+			\fi
 						 
 			\vspace{2em}
 			
@@ -53,3 +57,32 @@
 \makeatother
 
 \newpage
+
+\ifabstractexist
+	\begin{center}
+		\sanhao\selectfont\song
+		摘\hspace{2em}要
+	\end{center}
+	\vspace{\baselineskip}
+	\setcounter{page}{1}
+	%\pagenumbering{Roman}
+	\xiaosi
+	
+	\heiabstract \the\myabstract
+	
+	\vspace{\baselineskip}
+	\heikeyword \the\mykeywords
+	
+	\vspace{\baselineskip}
+	
+	\begin{tikzpicture}[remember picture, overlay]
+	\begin{pgfonlayer}{background}
+	\node at ($(current page.south) +(0in,2.5in)$) {%
+		\includegraphics[width=0.8\textwidth]{cover.png}};
+	\end{pgfonlayer}
+	\end{tikzpicture}
+	
+	\setcounter{footnote}{0}
+	\setcounter{page}{0}
+	\clearpage
+\fi
