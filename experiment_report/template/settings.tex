@@ -115,7 +115,8 @@
 		\vskip-1pt%页眉文字与页眉线距离，暂时没用。。 
 		\makeheadrule}}
 \newcommand{\thetitle}{\makeatletter\@title\makeatother}
-\lhead{\heiti \the\exnumber. 肝组织中DNA的分离提取及鉴定}%\thetitle
+\newtoks\pageheader%暂时的页眉
+\lhead{\heiti \the\exnumber. \the\pageheader}%\thetitle
 \fancyhead[R]{第 \bfseries\thepage\normalfont 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学实验报告}
 

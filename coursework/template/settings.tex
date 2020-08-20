@@ -143,7 +143,8 @@
 		\makeheadrule}}
 %\newcommand{\thetitle}{\makeatletter\@title\makeatother}
 %\lhead{\heiti 这里还没弄好}%\thetitle
-\fancyhead[L]{西安交通大学课程作业\LaTeX 模板}%可以改成标题
+\newtoks\pageheader%暂时的页眉
+\fancyhead[L]{\the\pageheader}%可以改成标题
 \fancyhead[R]{第 {\bfseries\thepage} 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学课程作业}
 
