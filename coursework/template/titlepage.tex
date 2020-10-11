@@ -1,6 +1,10 @@
 %标题页格式
 \definecolor{MyLightBlue}{rgb}{0.8,1,1}
 
+\let\origbaselineskip\baselineskip % 标题内部行距
+
+% 无副标题的单双栏好了
+
 \makeatletter
 
 \begin{titlepage}
@@ -10,40 +14,48 @@
 			\centering
 			\includegraphics[width=0.5\textwidth]{xjtu}
 		\end{figure*}
+
+		\vspace{1em}	
+		\heiti\erhao  课程作业 
 		
-		\begin{center} 
-			\vspace{0.7em}	
-			\heiti\erhao  课程作业 
+		\vspace{2.3em}	
+		\vspace{1em}		
+
+		% 居中标题
+		\begin{textblock*}{\textwidth}(1.15in+\hoffset,10cm) % {block width} (coords) 
+			\centering
+			\setlength{\baselineskip}{1.4\origbaselineskip} % 内部行距
+			\heiti\chuhao \thetitle 
 			
-			\vspace{2.3em}			
-		\end{center}
-		\begin{center}% 居中标题
-			\heiti\chuhao \@title
 			
+			\vspace{0.5em}
 			\ifsubtitleexist
-				\vspace{0.5em}
-				\songti\yihao \the\subtitle
+			\songti\yihao \the\subtitle
 			\else
-				\vspace{1em}
+			\hrule 
+			\vspace{0.5em}
+			\pgfornamenthan[scale=0.4]{60}
+%			\pgfornamenthan[scale=0.15]{58}
 			\fi
-						 
-			\vspace{2em}
+		\end{textblock*}
+		
+		
+		\vspace{13em}
+		
+		{\sanhao\yh\renewcommand{\arraystretch}{1.5}\renewcommand{\baselinestretch}{1.2}
+		\begin{tabular}{c}
+			姓名：\@author \\
+			学号：\the\stuId \\
+			班级：\the\class \\
+			学院：\the\school \\
+			\ifcsname @extrainfo\endcsname \@extrainfo\\ \fi
+%			课程：\the\course\\ % 将来可做个选项，不仅可选，还要调整位置
+			\@date \\
+		\end{tabular}} 
 			
-			{\sanhao\songti
-			\begin{center} \renewcommand{\arraystretch}{1.3}
-				\begin{tabular}{c}
-					姓名：\@author \\
-					学号：\the\stuId \\
-					班级：\the\class \\
-					学院：\the\school \\
-					课程：\the\course\\
-					\@date \\
-				\end{tabular} \renewcommand{\arraystretch}{1}
-			\end{center} 
-			}
-			{\global\let\author\@empty}%
-			{\global\let\date\@empty}%
-		\end{center}%
+		\renewcommand{\arraystretch}{1}
+		{\global\let\author\@empty}%
+		{\global\let\date\@empty}%
 		\setcounter{footnote}{0}%
 	\end{center}
 	\begin{tikzpicture}[remember picture, overlay]

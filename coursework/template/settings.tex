@@ -14,7 +14,12 @@
 \usepackage{supertabular}%跨页表格
 \usepackage{changepage}
 \usepackage{siunitx}%输入角度
-\usepackage{appendix}
+\usepackage{appendix} 
+\usepackage{setspace} % 行距
+\usepackage{titling}
+\usepackage[absolute,overlay]{textpos} % 标题页，自定义文字位置
+\usepackage{iftex}
+
 \newcommand{\mycomment}[1]{}%自定义注释。。
 
 %修改字体，不会就去看刘海洋的书，不要自己瞎鼓捣
@@ -107,11 +112,12 @@
 %\fi
 
 %一些信息
-\newtoks\subtitle%副标题
-\newtoks\stuId%学号
-\newtoks\class%班级
-\newtoks\school%学院
-\newtoks\course%课程名
+\newtoks\subtitle % 副标题
+\newtoks\stuId % 学号
+\newtoks\class % 班级
+\newtoks\school % 学院
+\newtoks\course % 课程名
+\newcommand\extrainfo[2]{\gdef\@extrainfo{#1: #2}} % 可选信息
 
 \newif\ifsubtitleexist\subtitleexistfalse %是否添加副标题，默认为假
 \newif\iftwocolumn\twocolumnfalse %是否为双栏，默认为假（即单栏）
