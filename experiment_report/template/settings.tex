@@ -104,8 +104,8 @@
 \newcommand{\footdeco}{
 	\resizebox{10em}{5ex}{
 		\begin{tikzpicture}
-		\node at (0,0) {\pgfornamenthan[scale=0.05]{58}};
-		\node[opacity=0.2, draw opacity=0, draw=black] at (0.02,-0.03) {\pgfornamenthan[scale=0.05]{58}};
+		\node at (0,0) {\pgfornamenthan[color=black,scale=0.05]{58}};
+		\node[opacity=0.2, draw opacity=0, draw=black] at (0.02,-0.03) {\pgfornamenthan[color=black,scale=0.05]{58}};
 		\end{tikzpicture}}\\[-1ex]}
 \newcommand{\makeheadrule}{
 	%\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
@@ -123,16 +123,17 @@
 %章节
 %\renewcommand{\sectionmark}[1]{\markleft{\thesection\ #1}}
 %\fancyhead[L]{\bfseries\leftmark }
+\usepackage{xcolor}
 \definecolor{mygreen}{RGB}{0,120,2}
 \definecolor{myblue}{RGB}{60,113,183}
 \definecolor{myorange}{RGB}{255,134,24}
 \usepackage{titlesec}
 \titleformat{\section}[hang]{\Large\color{mygreen}\heiti\bfseries}{
-	\Large\bfseries{\color{mygreen}\thesection}\enspace}{1pt}{}
+	\Large\heiti\bfseries{\color{mygreen}\thesection}\enspace}{1pt}{}
 \titleformat{\subsection}[hang]{\large\color{myblue}\heiti\bfseries}{
-	\large\bfseries{\color{myblue}\thesubsection}\enspace}{1pt}{}
+	\large\heiti\bfseries{\color{myblue}\thesubsection}\enspace}{1pt}{}
 \titleformat{\subsubsection}[hang]{\normalsize\color{myorange}\heiti\bfseries}{
-	\normalsize\bfseries{\color{myorange}\thesubsubsection}\enspace}{1pt}{}
+	\normalsize\heiti\bfseries{\color{myorange}\thesubsubsection}\enspace}{1pt}{}
 %\renewcommand\thesection{\chinese{section}、}
 
 \newcommand{\upcite}[1]{$^{\mbox{\scriptsize \cite{#1}}}$}%参考文献的上标引用

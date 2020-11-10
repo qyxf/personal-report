@@ -122,6 +122,7 @@
 \newif\ifsubtitleexist\subtitleexistfalse %是否添加副标题，默认为假
 \newif\iftwocolumn\twocolumnfalse %是否为双栏，默认为假（即单栏）
 \newif\ifabstractexist\abstractexistfalse %是否添加摘要，默认为假
+\newif\ifeng\engfalse % 是否为英文
 
 %修改摘要
 \usepackage{abstract}
@@ -131,6 +132,29 @@
 \newtoks\myabstract%摘要
 \newtoks\mykeywords%关键词
 
+%修改章节标题的字体，ctexart才能用
+%用了ctexart，还使章节标题居中
+%\CTEXsetup[format={\hei}]{section}
+%\CTEXsetup[format={\hei}]{subsection}
+%\CTEXsetup[format={\hei}]{subsubsection}
+%修改章节标题为中文
+\usepackage{zhnumber}
+%\renewcommand\thesection{\zhnum{section}}
+%\renewcommand \thesubsection {\arabic{subsection}}
+%\renewcommand \thesubsubsection {\arabic{subsection}.\arabic{subsubsection}}
+
+%\usepackage{xcolor}
+%\definecolor{mygreen}{RGB}{0,120,2}
+%\definecolor{myblue}{RGB}{60,113,183}
+%\definecolor{myorange}{RGB}{255,134,24}
+%\usepackage{titlesec}
+%\titleformat{\section}[hang]{\Large\color{mygreen}\heiti\bfseries}{
+%	\Large\heiti\bfseries{\color{mygreen}\thesection}\enspace}{1pt}{}
+%\titleformat{\subsection}[hang]{\large\color{myblue}\heiti\bfseries}{
+%	\large\heiti\bfseries{\color{myblue}\thesubsection}\enspace}{1pt}{}
+%\titleformat{\subsubsection}[hang]{\normalsize\color{myorange}\heiti\bfseries}{
+%	\normalsize\heiti\bfseries{\color{myorange}\thesubsubsection}\enspace}{1pt}{}
+
 % 定义页眉和页脚
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -138,8 +162,8 @@
 \newcommand{\footdeco}{
 	\resizebox{10em}{5ex}{
 		\begin{tikzpicture}
-		\node at (0,0) {\pgfornamenthan[scale=0.05]{58}};
-		\node[opacity=0.2, draw opacity=0] at (0.02,-0.03) {\pgfornamenthan[scale=0.05]{58}};
+		\node at (0,0) {\pgfornamenthan[color=black,scale=0.05]{58}}; 
+		\node[opacity=0.2, draw opacity=0] at (0.02,-0.03) {\pgfornamenthan[color=black,scale=0.05]{58}};
 		\end{tikzpicture}}\\[-1ex]}
 \newcommand{\makeheadrule}{
 	%\rule[6pt]{\textwidth}{0.5pt} \\[-17.5pt]
@@ -150,9 +174,22 @@
 %\newcommand{\thetitle}{\makeatletter\@title\makeatother}
 %\lhead{\heiti 这里还没弄好}%\thetitle
 \newtoks\pageheader%暂时的页眉
-\fancyhead[L]{\the\pageheader}%可以改成标题
+
+\engtrue % 英文标记，将来一定做成选项！！
+\ifeng
+\usepackage{lastpage}
+\renewcommand{\sectionmark}[1]{\upshape\markboth{#1}{}}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{Page \textbf{\thepage}\ of \textbf{\pageref{LastPage}}}
+\fancyfoot[C]{\footdeco \bfseries XJTU course work}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\refname}{References}
+\else
+\fancyhead[L]{\the\pageheader} % 可以改成标题;\leftmark\thesection
 \fancyhead[R]{第 {\bfseries\thepage} 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学课程作业}
+\fi
+	
 
 %参考文献
 %\usepackage{natbib}
