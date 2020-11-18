@@ -3,7 +3,7 @@
 \usepackage{amsmath, amsfonts, amssymb} % 数学公式相关宏包
 \usepackage{color}      % color content
 \usepackage{graphicx}   % 导入图片
-\usepackage{subfigure}  % 并排子图
+\usepackage[small]{subfigure}  % 并排子图
 \usepackage{hyperref}
 \usepackage{url}
 %\usepackage{breakurl}	%网址换行
@@ -123,6 +123,7 @@
 \newif\iftwocolumn\twocolumnfalse %是否为双栏，默认为假（即单栏）
 \newif\ifabstractexist\abstractexistfalse %是否添加摘要，默认为假
 \newif\ifeng\engfalse % 是否为英文
+\newif\ifcoloredtitle\coloredtitlefalse % 标题是否为彩色
 
 %修改摘要
 \usepackage{abstract}
@@ -143,17 +144,19 @@
 %\renewcommand \thesubsection {\arabic{subsection}}
 %\renewcommand \thesubsubsection {\arabic{subsection}.\arabic{subsubsection}}
 
-%\usepackage{xcolor}
-%\definecolor{mygreen}{RGB}{0,120,2}
-%\definecolor{myblue}{RGB}{60,113,183}
-%\definecolor{myorange}{RGB}{255,134,24}
-%\usepackage{titlesec}
-%\titleformat{\section}[hang]{\Large\color{mygreen}\heiti\bfseries}{
-%	\Large\heiti\bfseries{\color{mygreen}\thesection}\enspace}{1pt}{}
-%\titleformat{\subsection}[hang]{\large\color{myblue}\heiti\bfseries}{
-%	\large\heiti\bfseries{\color{myblue}\thesubsection}\enspace}{1pt}{}
-%\titleformat{\subsubsection}[hang]{\normalsize\color{myorange}\heiti\bfseries}{
-%	\normalsize\heiti\bfseries{\color{myorange}\thesubsubsection}\enspace}{1pt}{}
+\coloredtitlefalse
+\ifcoloredtitle
+	\usepackage{xcolor}
+	\definecolor{mygreen}{RGB}{0,120,2}
+	\definecolor{myblue}{RGB}{60,113,183}
+	\definecolor{myorange}{RGB}{255,120,0}
+	\usepackage{titlesec}
+	\titleformat{\section}[hang]{\xiaoer\color{mygreen}\bfseries}{
+	}{-5pt}{}[\color{black}\normalfont]
+	\titleformat{\subsection}[hang]{\Large\color{myblue}\bfseries}{
+		\sanhao\bfseries{\color{myblue}\thesubsection}\enspace}{0pt}{}[\color{black}\normalfont]
+	\titleformat{\subsubsection}[hang]{\sihao\color{myorange}\bfseries}{}{0pt}{}[\color{black}\normalfont]
+\fi
 
 % 定义页眉和页脚
 \usepackage{fancyhdr}
@@ -277,3 +280,11 @@
 
 %写化学式
 \usepackage[version=4]{mhchem}
+
+
+%% other tests
+\ifcsname foo\endcsname
+\message{\string\foo\space is defined}%
+\else
+\message{no command \string\foo}%
+\fi
