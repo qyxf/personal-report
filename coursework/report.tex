@@ -45,12 +45,13 @@
 % 设置标题
 %\subtitleexisttrue % 打开subtitle
 %\abstractexisttrue % 打开abstract
-%\twocolumntrue % 打开双栏，否则单栏
+\twocolumntrue % 打开双栏，否则单栏
 
-\input{./template/titlepage.tex} % 单独页标题
-%\input{./template/normaltitle.tex} % 正常标题，不允许也不应有双栏
+%\input{./template/titlepage.tex} % 单独页标题
+\input{./template/normaltitle.tex} % 正常标题，不允许也不应有双栏
 % 双栏版，可能要调列表行距
 
+%\sihao % 那图注啥的也得大一号啊
 
 \noindent 本demo提供的文档元素有：
 \begin{enumerate}
@@ -128,6 +129,8 @@ TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，�
 求解置信区间。
 
 \subsection{插入图片}
+
+双栏模式下应置于单栏环境中。
 
 \begin{figure}[!h]
 	\centering

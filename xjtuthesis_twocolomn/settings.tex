@@ -114,10 +114,9 @@
 		\erhao\heiti \@title\par 
 		
 		\begin{center} \renewcommand{\arraystretch}{1.5}
-			\begin{tabular}{c}
-				\wuhao\songti	\@author \\
-				\xiaowu\songti	\the\institute
-			\end{tabular} \renewcommand{\arraystretch}{1}
+			\wuhao\songti	\ifstrempty{\@author}{\@author}{\the\authors} \\ % true则为#3，false则为#2 \\
+			\xiaowu\songti	\the\institute
+			\renewcommand{\arraystretch}{1}
 		\end{center} 
 		{\global\let\author\@empty}%
 		{\global\let\date\@empty}%
