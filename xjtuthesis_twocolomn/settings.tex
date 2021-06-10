@@ -1,8 +1,9 @@
+%% 基本宏包和字体字号
 \usepackage{ctex}  
 \usepackage{amsmath, amsfonts, amssymb} % 数学公式相关宏包
 \usepackage{color}      % color content
 \usepackage{graphicx}   % 导入图片
-\usepackage{subfigure}  % 并排子图
+\usepackage[small]{subfigure}  % 并排子图
 \usepackage{hyperref}
 \usepackage{url}
 %\usepackage{breakurl}	%网址换行
@@ -13,7 +14,12 @@
 \usepackage{supertabular}%跨页表格
 \usepackage{changepage}
 \usepackage{siunitx}%输入角度
-\usepackage{appendix}
+\usepackage{appendix} 
+\usepackage{setspace} % 行距
+\usepackage{titling}
+\usepackage[absolute,overlay]{textpos} % 标题页，自定义文字位置
+\usepackage{iftex}
+
 \newcommand{\mycomment}[1]{}%自定义注释。。
 
 %修改字体，不会就去看刘海洋的书，不要自己瞎鼓捣

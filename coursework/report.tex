@@ -45,7 +45,7 @@
 % 设置标题
 %\subtitleexisttrue % 打开subtitle
 %\abstractexisttrue % 打开abstract
-\twocolumntrue % 打开双栏，否则单栏
+%\twocolumntrue % 打开双栏，否则单栏
 
 %\input{./template/titlepage.tex} % 单独页标题
 \input{./template/normaltitle.tex} % 正常标题，不允许也不应有双栏
@@ -171,6 +171,20 @@ TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，�
 	\caption{城市风景}
 \end{figure}
 
+% also recommend subfloat package
+%\begin{figure}[htbp]
+%	\centering
+%	\captionsetup[subfloat]{format=hang,singlelinecheck=false, justification=centering,font={stretch=1.3}}
+%	\subfloat[ATP]{
+%		\begin{minipage}[t]{0.3\linewidth}
+%			\includegraphics[width=\textwidth]{atp}
+%	\end{minipage}}
+%	\quad
+%	\subfloat[ponatinib \protect\\ \scriptsize(ID:DB08901)]{
+%		\begin{minipage}[t]{0.3\linewidth}
+%			\includegraphics[width=\textwidth]{ponatinib}
+%	\end{minipage}}
+%\end{figure}
 
 In 1953, James Watson and Francis Crick discovered double-helix structure of DNA, which is seen as the beginning of molecular biology. Human started to gain insight into biomolecules at molecular level.
 

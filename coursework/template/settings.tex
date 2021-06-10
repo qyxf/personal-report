@@ -12,6 +12,7 @@
 \usepackage{booktabs}
 \usepackage{longtable}  %长表格
 \usepackage{supertabular}%跨页表格
+\usepackage{threeparttable} %表格注释
 \usepackage{changepage}
 \usepackage{siunitx}%输入角度
 \usepackage{appendix} 
@@ -188,7 +189,7 @@
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\refname}{References}
 \else
-\fancyhead[L]{\the\pageheader} % 可以改成标题;\leftmark\thesection
+\fancyhead[L]{\the\pageheader} % 可以改成标题;\leftmark
 \fancyhead[R]{第 {\bfseries\thepage} 页}
 \fancyfoot[C]{\footdeco \heiti 西安交通大学课程作业}
 \fi
@@ -236,8 +237,8 @@
 }
 
 % 汉风图纹	
-\RequirePackage{pgfornament-han}
-\RequirePackage{pgfornament}
+%\RequirePackage{pgfornament-han}
+%\RequirePackage{pgfornament}
 
 %彩色文本框
 \usepackage{tcolorbox}
