@@ -13,8 +13,8 @@
 \linespread{1.25}
 \graphicspath{{pics/}}
 
-
-
+\usepackage[round,authoryear]{natbib} % only when using .bibs
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
 
 %% 信息
 \title{西安交通大学课程作业\LaTeX 模板} % 也可以标题为课程名，副标题为小作业名
@@ -130,6 +130,13 @@ TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，�
 
 \subsection{插入图片}
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{city}
+	\caption{城市风光}
+	\label{fig:2333}
+\end{figure}
+
 双栏模式下应置于单栏环境中。
 
 \begin{figure}[!h]
@@ -210,12 +217,13 @@ In 1953, James Watson and Francis Crick discovered double-helix structure of DNA
 
 
 %参考文献
-\begin{thebibliography}{2}
+\begin{thebibliography}{99}
 	\bibitem{1} hahahaha
 	\bibitem{2} lalalala
 \end{thebibliography}
 %使用bib文件
 %\bibliographystyle{./template/gbt7714-unsrt}
+%\bibliographystyle{plainnat}
 %\bibliography{reference}
 
 
