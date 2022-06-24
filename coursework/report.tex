@@ -1,7 +1,6 @@
 \documentclass[UTF8,12pt,a4paper]{article}
 \usepackage{ctex}
 \usepackage[top=2.54cm,bottom=2.54cm,left=2.8cm,right=2.8cm]{geometry}
-\usepackage{graphicx}
 
 %set TEXINPUTS=C:/temp;
 %set BSTINPUTS=C:/temp;
@@ -15,6 +14,12 @@
 
 \usepackage[round,authoryear]{natbib} % only when using .bibs
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%\setlength{\parindent}{0em} % 英文不缩进
+\setlength{\parindent}{2em}
 
 %% 信息
 \title{西安交通大学课程作业\LaTeX 模板} % 也可以标题为课程名，副标题为小作业名
@@ -178,6 +183,26 @@ TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，�
 	\caption{城市风景}
 \end{figure}
 
+%\begin{figure}[!h]
+%	\centering
+%		\setlength{\subfigcapskip}{6pt}
+%	\subfigure[]{
+%		\begin{minipage}[t]{0.3\linewidth}
+%			\includegraphics[width=\textwidth]{remde}
+%	\end{minipage}}
+%	\quad
+%	\subfigure[]{
+%		\begin{minipage}[t]{0.3\linewidth}
+%			\includegraphics[width=\textwidth]{remde-act}
+%	\end{minipage}}
+%	\quad
+%	\subfigure[]{
+%		\begin{minipage}[t]{0.3\linewidth}
+%			\includegraphics[width=\textwidth]{atp}
+%	\end{minipage}}
+%	\caption{ATP}
+%\end{figure}
+
 % also recommend subfloat package
 %\begin{figure}[htbp]
 %	\centering
@@ -192,6 +217,22 @@ TeX的使用相对于word要麻烦很多，但是其优势势非常明显的，�
 %			\includegraphics[width=\textwidth]{ponatinib}
 %	\end{minipage}}
 %\end{figure}
+
+\begin{algorithm} 
+	\caption{Calculate $y = x^n$} 
+	\label{alg3} 
+	\begin{algorithmic}
+		\REQUIRE $n \geq 0 \vee x \neq 0$ 
+		\ENSURE $y = x^n$ 
+		\STATE $y \gets 1$ 
+		\IF{$n < 0$} 
+		\STATE $X \gets 1 / x$ 
+		\STATE $N \gets -n$ 
+		\ELSE
+		\STATE $X \gets 1 / x$
+		\ENDIF
+	\end{algorithmic} 
+\end{algorithm}
 
 In 1953, James Watson and Francis Crick discovered double-helix structure of DNA, which is seen as the beginning of molecular biology. Human started to gain insight into biomolecules at molecular level.
 
